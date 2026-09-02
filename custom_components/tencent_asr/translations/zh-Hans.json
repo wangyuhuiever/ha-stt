@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "腾讯云实时语音识别",
+        "description": "配置腾讯云实时 ASR。",
+        "data": {
+          "app_id": "AppID",
+          "secret_id": "SecretID",
+          "secret_key": "SecretKey",
+          "engine": "识别引擎",
+          "region": "地域（可选）"
+        }
+      },
+      "reconfigure": {
+        "title": "重新配置腾讯云 ASR",
+        "description": "修改腾讯云密钥或配置信息。",
+        "data": {
+          "app_id": "AppID",
+          "secret_id": "SecretID",
+          "secret_key": "SecretKey",
+          "engine": "识别引擎",
+          "region": "地域（可选）"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "这个腾讯云账号已经配置过。",
+      "reconfigure_successful": "重新配置成功！"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "选项配置",
+        "description": "调整识别引擎与地域参数。",
+        "data": {
+          "engine": "识别引擎",
+          "region": "地域（可选）"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "domain": "tencent_asr",
+  "name": "Tencent Cloud ASR",
+  "version": "0.1.0",
+  "config_flow": true,
+  "documentation": "https://cloud.tencent.com/document/api/1093/48982",
+  "requirements": [],
+  "codeowners": [],
+  "iot_class": "cloud_push"
+}

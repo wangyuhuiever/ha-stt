@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv
+
+# Home Assistant local dev runtime data
+config/
+!config/configuration.yaml
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp

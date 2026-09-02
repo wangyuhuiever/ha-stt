@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tencent Cloud ASR",
+        "description": "Configure Tencent Cloud real-time speech recognition.",
+        "data": {
+          "app_id": "AppID",
+          "secret_id": "Secret ID",
+          "secret_key": "Secret Key",
+          "engine": "Engine",
+          "region": "Region (optional)"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This Tencent Cloud ASR account is already configured."
+    }
+  }
+}

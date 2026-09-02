@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tencent Cloud Realtime ASR",
+        "description": "Configure Tencent Cloud Realtime ASR.",
+        "data": {
+          "app_id": "AppID",
+          "secret_id": "SecretID",
+          "secret_key": "SecretKey",
+          "engine": "Recognition Engine",
+          "region": "Region (Optional)"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Tencent Cloud ASR",
+        "description": "Update credentials or settings.",
+        "data": {
+          "app_id": "AppID",
+          "secret_id": "SecretID",
+          "secret_key": "SecretKey",
+          "engine": "Recognition Engine",
+          "region": "Region (Optional)"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This Tencent Cloud account is already configured.",
+      "reconfigure_successful": "Reconfiguration successful!"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "description": "Adjust recognition engine and region.",
+        "data": {
+          "engine": "Recognition Engine",
+          "region": "Region (Optional)"
+        }
+      }
+    }
+  }
+}

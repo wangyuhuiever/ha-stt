@@ -1,0 +1,15 @@
+[project]
+name = "ha-stt"
+version = "0.1.0"
+description = "Tencent Cloud ASR integration for Home Assistant"
+readme = "README.md"
+authors = [
+    { name = "wangyuhui", email = "wangyuhuiever@163.com" }
+]
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "homeassistant",
+]
+
+[tool.uv]
+package = false
