@@ -12,7 +12,7 @@ import aiohttp
 APP_ID = "xx"
 SECRET_ID = "xx"
 SECRET_KEY = "xx"
-ENGINE = "16k_zh_large"
+ENGINE = "16k_zh"
 
 ASR_HOST = "asr.cloud.tencent.com"
 ASR_PATH = "/asr/v2"

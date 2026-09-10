@@ -11,9 +11,10 @@
 
 - **实时流式传输**：基于腾讯云 WebSocket 实时语音识别接口（`/asr/v2`），音频边录边传，毫秒级响应。
 - **UI 配置流 (Config Flow)**：无需手动编写复杂的 YAML 配置，在 Home Assistant 前端界面一键配置与修改。
-- **支持多引擎切换**：
-  - `16k_zh_large`：成熟稳定的实时中文引擎，识别速度极快。
-  - `Hy-ASR-3.0-preview`：腾讯混元语音识别大模型（支持中英双语）。
+- **支持多引擎切换（通用模型 / 语音大模型）**：
+  - `16k_zh`：**通用模型**（默认推荐）。成熟稳定的实时中文通用引擎，识别响应极快，**支持腾讯云通用免费额度/通用资源包**。
+  - `16k_zh_large`：**语音大模型 1.0 版**。针对高噪声、远场、口音等复杂场景，识别鲁棒性强（按大模型1.0版计费）。
+  - `Hy-ASR-3.0-preview`：**语音大模型 2.0 混元版**。基于腾讯混元大模型，支持中英双语与多方言（按大模型2.0版计费）。
 - **原生兼容 Assist**：完美对接 Home Assistant 语音助手流水线（Voice Pipeline / Assist Satellite / 网页语音交互）。
 - **纯原生异步**：采用 `aiohttp` 异步 WebSocket 通信，无阻塞轻量化运行。
 
@@ -82,7 +83,7 @@ docker run -d \
    - **AppID**：主账号开发者 AppID（10 位纯数字，在 [账号信息](https://console.cloud.tencent.com/developer) 中查看）。
    - **SecretID**：腾讯云 API 访问密钥 ID（可在 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取）。
    - **SecretKey**：腾讯云 API 访问密钥 Key。
-   - **识别引擎**：默认 `16k_zh_large` 或混元 `Hy-ASR-3.0-preview`。
+   - **识别引擎**：默认 `16k_zh`（通用模型，支持免费额度），可选 `16k_zh_large`（语音大模型1.0）或 `Hy-ASR-3.0-preview`（混元大模型2.0）。
 6. 点击提交完成添加。
 
 ### 2. 配置到语音助手 (Assist)

@@ -14,7 +14,7 @@ from .const import (
     DEFAULT_ENGINE,
     DEFAULT_REGION,
     DOMAIN,
-    ENGINE_HY,
+    SUPPORTED_ENGINES,
 )
 
 
@@ -50,12 +50,7 @@ class TencentAsrConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 vol.Optional(
                     CONF_ENGINE,
                     default=DEFAULT_ENGINE,
-                ): vol.In(
-                    {
-                        DEFAULT_ENGINE: "16k_zh_large（成熟实时中文引擎）",
-                        ENGINE_HY: "Hy-ASR-3.0-preview（混元，Preview）",
-                    }
-                ),
+                ): vol.In(SUPPORTED_ENGINES),
                 vol.Optional(CONF_REGION, default=DEFAULT_REGION): str,
             }
         )
@@ -86,12 +81,7 @@ class TencentAsrConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 vol.Optional(
                     CONF_ENGINE,
                     default=current.get(CONF_ENGINE, DEFAULT_ENGINE),
-                ): vol.In(
-                    {
-                        DEFAULT_ENGINE: "16k_zh_large（成熟实时中文引擎）",
-                        ENGINE_HY: "Hy-ASR-3.0-preview（混元，Preview）",
-                    }
-                ),
+                ): vol.In(SUPPORTED_ENGINES),
                 vol.Optional(
                     CONF_REGION,
                     default=current.get(CONF_REGION, DEFAULT_REGION),
@@ -120,12 +110,7 @@ class TencentAsrOptionsFlow(config_entries.OptionsFlow):
                     default=self.config_entry.options.get(
                         CONF_ENGINE, current.get(CONF_ENGINE, DEFAULT_ENGINE)
                     ),
-                ): vol.In(
-                    {
-                        DEFAULT_ENGINE: "16k_zh_large（成熟实时中文引擎）",
-                        ENGINE_HY: "Hy-ASR-3.0-preview（混元，Preview）",
-                    }
-                ),
+                ): vol.In(SUPPORTED_ENGINES),
                 vol.Optional(
                     CONF_REGION,
                     default=self.config_entry.options.get(
@@ -136,3 +121,4 @@ class TencentAsrOptionsFlow(config_entries.OptionsFlow):
         )
 
         return self.async_show_form(step_id="init", data_schema=schema)
+
